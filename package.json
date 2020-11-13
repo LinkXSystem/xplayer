@@ -1,0 +1,25 @@
+{
+  "name": "xplayer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "emcc src/extra/dip.cc -s WASM=1 -O3 --no-entry -o src/extra/dip.wasm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LinkXSystem/xplayer.git"
+  },
+  "keywords": [
+    "wasm",
+    "canvas",
+    "player",
+    "convolution"
+  ],
+  "author": "zhi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LinkXSystem/xplayer/issues"
+  },
+  "homepage": "https://github.com/LinkXSystem/xplayer#readme"
+}

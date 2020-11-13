@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background: black;
+            color: #CCCCCC;
+        }
+
+        #video {
+            display: none;
+        }
+
+        .cantaienr {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <video id="video" src="media/video.mp4" style="display: none;"></video>
+    <div class="container">
+        <canvas id="canvas" width="320" height="192"></canvas>
+    </div>
+    <script type="text/javascript" src="./src/core.js"></script>
+</body>
+
+</html>

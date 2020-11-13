@@ -1,0 +1,6 @@
+
+# ignore the compile file about wasm
+*.wasm
+
+# ignore the file about mac os
+.DS_Store
