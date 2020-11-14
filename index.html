@@ -4,28 +4,33 @@
 <head>
     <style>
         body {
-            background: black;
             color: #CCCCCC;
         }
 
         #video {
-            display: none;
+            /* display: none; */
         }
 
-        .cantaienr {
+        .container {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
 
 <body>
-    <video id="video" src="media/video.mp4" style="display: none;"></video>
+
     <div class="container">
+        <video id="video" src="assets/media/standard.mp4" controls></video>
         <canvas id="canvas" width="320" height="192"></canvas>
     </div>
+    <script src="./src/convolution.js"></script>
     <script type="text/javascript" src="./src/core.js"></script>
 </body>
 

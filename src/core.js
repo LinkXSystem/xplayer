@@ -1,4 +1,12 @@
 class Processor {
+    constructor() {
+        this.kernel = Convolution.setFlipKernel([
+            [-1, -1, 1],
+            [-1, 14, -1],
+            [1, 1, -1]
+        ]);
+    }
+
     render() {
         if (this.video.paused || this.video.ended) {
             return;
@@ -25,15 +33,20 @@ class Processor {
         let frame = this.context.getImageData(0, 0, this.width, this.height);
         let length = frame.data.length / 4;
 
-        for (let i = 0; i < length; i++) {
-            let r = frame.data[i * 4 + 0];
-            let g = frame.data[i * 4 + 1];
-            let b = frame.data[i * 4 + 2];
-            if (g > 100 && r > 100 && b < 43) {
-                frame.data[i * 4 + 3] = 0;
-            }
+        // TODO: 视频背景测试
+        // for (let i = 0; i < length; i++) {
+        //     let r = frame.data[i * 4 + 0];
+        //     let g = frame.data[i * 4 + 1];
+        //     let b = frame.data[i * 4 + 2];
+        //     if (g > 100 && r > 100 && b < 43) {
+        //         frame.data[i * 4 + 3] = 0;
+        //     }
+        // }
 
-        }
+        // TODO: 卷积内核测试
+        const { width, height, kernel } = this;
+        Convolution.setConvFilter(frame.data, width, height, kernel);
+
         this.context.putImageData(frame, 0, 0);
     }
 }
